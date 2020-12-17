@@ -1,3 +1,4 @@
+require('dotenv').config();
 const mongoose = require('mongoose');
 
 mongoose.connect(process.env.MONGO_URI, {
@@ -7,6 +8,7 @@ mongoose.connect(process.env.MONGO_URI, {
 });
 
 const db = mongoose.connection;
+console.log(db);
 
 // Event listener that will fire once the connection opens for the db & log host and port
 db.once('open', () => {
